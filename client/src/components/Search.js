@@ -71,6 +71,7 @@ export default function SearchPage() {
           <TextField
             id="outlined-basic"
             label="Book"
+            placeholder="Harry Potter"
             variant="outlined"
             className={classes.input}
             onChange={(e) => setSearch(e.target.value)}
