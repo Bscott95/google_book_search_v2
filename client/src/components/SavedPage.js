@@ -5,7 +5,7 @@ import SavedCard from "./SavedCard";
 import Typography from "@material-ui/core/Typography";
 import API from "../utils/api";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   root: {
     borderRadius: "10px",
     backgroundColor: "#0F9D58",

@@ -22,6 +22,7 @@ module.exports = {
       book.save();
       return res.json(book).status(200);
     } catch (e) {
+      console.log("failed")
       return res.status(400).json(e);
     }
   },

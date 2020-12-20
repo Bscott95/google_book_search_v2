@@ -3,13 +3,15 @@ const express = require("express");
 const mongoose = require("mongoose");
 const routes = require("./routes");
 
-mongoose.connect(process.env.MONGODB_URI, {
-    useNewUrlParser: true,
-    useFindAndModify: true,
-  })
-  .catch((e) => console.log(e));
-
-mongoose.set("debug", true);
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/Book', {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  useCreateIndex: true,
+  useFindAndModify: false,
+})
+.then(() => console.log('WORKS!'))
+.catch(() => console.log('BAD!'));
+// .catch(e => console.log(e));
 
 const PORT = process.env.PORT || 3001;
 const app = express();
